@@ -1,0 +1,19 @@
+{
+  "name": "runware",
+  "owner": {
+    "name": "Runware"
+  },
+  "description": "Outcome-named Agent Skills for the Runware API: image, video, audio, 3D, and text generation.",
+  "plugins": [
+    {
+      "name": "skills",
+      "source": "./",
+      "description": "The Runware skills catalog. Ask for an outcome in plain language and the right skill routes to the right live Runware model.",
+      "homepage": "https://runware.ai/docs/platform/skills",
+      "repository": "https://github.com/runware/runware-skills",
+      "keywords": ["runware", "image", "video", "audio", "3d", "text", "generation"],
+      "skills": ["./skills/"],
+      "strict": false
+    }
+  ]
+}
