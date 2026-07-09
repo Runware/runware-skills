@@ -1,0 +1,93 @@
+{
+  "$schema": "https://skills.sh/schemas/skills.sh.schema.json",
+  "notGrouped": "bottom",
+  "groupings": [
+    {
+      "title": "Core",
+      "description": "Pick the right model, write effective prompts, and call the Runware API correctly.",
+      "skills": [
+        "runware-run",
+        "runware-models",
+        "runware-prompting"
+      ]
+    },
+    {
+      "title": "Image generation",
+      "description": "Create images from text — photoreal, product, logos, exact text, and structure-controlled.",
+      "skills": [
+        "photoreal-stills",
+        "product-photography",
+        "text-in-image",
+        "logos-and-vectors",
+        "controlled-generation",
+        "character-consistency"
+      ]
+    },
+    {
+      "title": "Image editing",
+      "description": "Modify, composite, restore, and upscale images you already have.",
+      "skills": [
+        "edit-image",
+        "composite-scene",
+        "restore-and-upscale"
+      ]
+    },
+    {
+      "title": "Video generation",
+      "description": "Create video — animate stills, cinematic shots, ads, talking avatars, and multi-shot stories.",
+      "skills": [
+        "animate-image",
+        "cinematic-video",
+        "multi-shot-video",
+        "product-ad-video",
+        "ugc-ad",
+        "talking-avatar"
+      ]
+    },
+    {
+      "title": "Video editing",
+      "description": "Restyle, reframe, replace elements, upscale, and add audio to existing video.",
+      "skills": [
+        "edit-video",
+        "reframe-video",
+        "replace-in-video",
+        "video-upscale",
+        "add-audio-to-video"
+      ]
+    },
+    {
+      "title": "Audio & voice",
+      "description": "Music, voiceover, voice cloning, and multi-speaker dialogue.",
+      "skills": [
+        "music",
+        "voiceover",
+        "voice-cloning",
+        "dialogue-audio"
+      ]
+    },
+    {
+      "title": "3D & game assets",
+      "description": "Turn images or prompts into 3D models and consistent 2D game art.",
+      "skills": [
+        "image-to-3d-asset",
+        "game-assets-2d"
+      ]
+    },
+    {
+      "title": "Models & training",
+      "description": "Bring your own LoRA or checkpoint, or train a custom style/character model.",
+      "skills": [
+        "bring-your-own-model",
+        "train-style-model"
+      ]
+    },
+    {
+      "title": "LLM & vision",
+      "description": "Build LLM agents on Runware, and turn images, video, audio, or documents into text.",
+      "skills": [
+        "llm-agent",
+        "vision-understanding"
+      ]
+    }
+  ]
+}
