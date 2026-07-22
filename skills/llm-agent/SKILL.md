@@ -28,7 +28,7 @@ Address by **AIR**. Confirm each is `live` and inspect its schema via `runware-m
 - **Claude Opus 4.8** (`anthropic:claude@opus-4.8`). Premium reasoning and long-horizon tool use.
 - **Claude Sonnet 4.6** (`anthropic:claude@sonnet-4.6`). Fast, cheaper Claude tier for high-volume or latency-sensitive agents.
 - **Kimi K2.6** (slug `moonshotai-kimi-k2-6`, AIR `moonshotai:kimi@k2.6`). Open frontier model built for long-horizon, tool-rich agentic workflows. The tool-calling guide is grounded on it.
-- **Qwen3.5-397B** (`alibaba:qwen@3.5-397b`). Large MoE reasoner with ultra-long context, strong on coding and agent tasks.
+- **DeepSeek V4 Flash** (`deepseek:v4@flash`). Fast, cost-efficient open reasoner with ~1M-token context, strong on coding and agent tasks.
 
 Route by sub-task, not by brand: pick reasoning depth and context window for the job, then drop to a faster tier for cheap or high-volume calls. All five carry `io:text-to-text`.
 
