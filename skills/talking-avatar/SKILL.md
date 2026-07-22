@@ -12,6 +12,16 @@ description: >
 
 Drive a talking-head video from a still portrait or a registered avatar. Two ways in: write a script and let the model speak it (text-to-speech), or hand the model your own audio and it lip-syncs the face to it. The output is a video of someone delivering your words. Use this for presenters, explainers, spokespeople, and re-voicing footage. For a full ad or a standalone voice track, compose with the sibling skills below.
 
+## Consent and disclosure
+
+This skill synthesizes a real person's face and voice, so gate on authorization before generating:
+
+- **Require ownership or consent.** Confirm the user owns the portrait, footage, and voice, or has the subject's permission to use them. If that is unclear, ask before proceeding.
+- **Refuse impersonation.** Do not recreate or re-voice a real person, especially a public figure, without authorization, and refuse requests aimed at deception, harassment, fraud, political manipulation, or non-consensual or sexual content.
+- **Disclose synthetic media.** Recommend labeling AI-generated or altered video where it could be mistaken for real, and offer to burn in a disclosure caption when re-voicing existing footage.
+
+When a request is ambiguous about who the person is or whether it is authorized, stop and ask rather than generate.
+
 ## Inputs to collect
 
 - **The face.** A portrait image of the person, or a registered avatar ID for catalog-based models. (Ask only if none provided.)

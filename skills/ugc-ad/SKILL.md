@@ -20,6 +20,7 @@ Produce a short, creator-style ad: a presenter talking straight to camera (testi
 - **The product** and the single claim the ad should land. (Ask for real specifics. Do not invent features.)
 - **Target platform and orientation:** 9:16 for TikTok / Reels / Shorts, 16:9 for YouTube / web.
 - Optional: a chosen avatar/voice, a brand background, whether captions should be burned in.
+- **Consent for a real person.** If the ad uses a real presenter, voice, or likeness, confirm the user owns it or has permission. Do not impersonate a real or public figure without authorization, and disclose synthetic media where it could be mistaken for real.
 
 ## Models
 
