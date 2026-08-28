@@ -99,4 +99,6 @@ Installed separately from the main catalog, because the audiences don't overlap:
 
 ## Authoring
 
-See `AGENTS.md` for the skill structure and conventions. Every `SKILL.md` follows the same skeleton.
+Every skill is a folder - `skills/<kebab-name>/SKILL.md` for the generation catalog, `migrate/<kebab-name>/SKILL.md` for the migration plugin - and each `SKILL.md` follows the same skeleton. Depth that only matters some of the time goes in an optional `references/` folder next to it, so it loads on demand rather than every time the skill triggers.
+
+Skills route to models by AIR and defer to the live schema rather than restating it, which is what keeps them from going stale as the catalog changes.
