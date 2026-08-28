@@ -14,6 +14,16 @@
       "keywords": ["runware", "image", "video", "audio", "3d", "text", "generation"],
       "skills": ["./skills/"],
       "strict": false
+    },
+    {
+      "name": "migrate",
+      "source": "./",
+      "description": "Arriving at Runware. Build a new integration, or paste a call from Fal, Replicate, or WaveSpeed and get back what maps cleanly, what needs adjustment, and what has no equivalent.",
+      "homepage": "https://runware.ai/docs/platform/skills",
+      "repository": "https://github.com/runware/runware-skills",
+      "keywords": ["runware", "migration", "integration", "fal", "replicate", "wavespeed", "porting"],
+      "skills": ["./migrate/"],
+      "strict": false
     }
   ]
 }

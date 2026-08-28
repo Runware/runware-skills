@@ -13,6 +13,8 @@ Each skill is a folder under `skills/` with a `SKILL.md`. An agent loads a skill
 /plugin install skills@runware
 ```
 
+Migrating from another provider? Install [`migrate@runware`](#migration) instead - or as well.
+
 **Any other agent** - these follow the open Agent Skills standard, so Cursor, OpenClaw, Codex, and others can use them too. Clone the repo and put the folders where that agent loads skills from (`.cursor/skills/`, `.claude/skills/`, `.agents/skills/`, and so on):
 
 ```
@@ -79,6 +81,21 @@ A skill is a stable interface over a changing catalog: when a better model ships
 **Custom models**
 - `train-style-model` - fine-tune a reusable brand/style LoRA.
 - `bring-your-own-model` - upload and use your own LoRA or checkpoint.
+
+## Migration
+
+A separate plugin under `migrate/`, for developers arriving at Runware rather than already building on it. Paste a call from your current provider and the skill reports what maps cleanly, what needs adjustment (with a concrete before/after), and what has no equivalent at all. They are compatibility checkers, not auto-translators.
+
+```
+/plugin install migrate@runware
+```
+
+- `integrate-with-runware` - the API contract for a new integration: request/response shape, auth, delivery methods, errors.
+- `fal-to-runware` - port a [Fal.ai](https://fal.ai) call.
+- `replicate-to-runware` - port a [Replicate](https://replicate.com) call.
+- `wavespeed-to-runware` - port a [WaveSpeed](https://wavespeed.ai) call.
+
+Installed separately from the main catalog, because the audiences don't overlap: the generation skills are for people already on Runware, and a migration skill is dead weight the day after you finish migrating.
 
 ## Authoring
 

@@ -88,6 +88,16 @@
         "llm-agent",
         "vision-understanding"
       ]
+    },
+    {
+      "title": "Migration",
+      "description": "Arriving at Runware: build a new integration, or port one from another provider.",
+      "skills": [
+        "integrate-with-runware",
+        "fal-to-runware",
+        "replicate-to-runware",
+        "wavespeed-to-runware"
+      ]
     }
   ]
 }
