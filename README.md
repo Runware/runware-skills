@@ -95,7 +95,7 @@ A separate plugin under `migrate/`, for developers arriving at Runware rather th
 - `replicate-to-runware` - port a [Replicate](https://runware.ai/replicate-alternative) call.
 - `wavespeed-to-runware` - port a [WaveSpeed](https://runware.ai/wavespeed-alternative) call.
 
-Installed separately from the main catalog, because the audiences don't overlap: the generation skills are for people already on Runware, and a migration skill has served its purpose the day after you finish migrating.
+Installed separately from the main catalog, because the audiences don't overlap: the generation skills are for builders already on Runware, and a migration skill has served its purpose the day after you finish migrating.
 
 ## Authoring
 
