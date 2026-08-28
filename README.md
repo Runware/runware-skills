@@ -91,11 +91,11 @@ A separate plugin under `migrate/`, for developers arriving at Runware rather th
 ```
 
 - `integrate-with-runware` - the API contract for a new integration: request/response shape, auth, delivery methods, errors.
-- `fal-to-runware` - port a [Fal.ai](https://fal.ai) call.
-- `replicate-to-runware` - port a [Replicate](https://replicate.com) call.
-- `wavespeed-to-runware` - port a [WaveSpeed](https://wavespeed.ai) call.
+- `fal-to-runware` - port a [Fal.ai](https://runware.ai/fal-alternative) call.
+- `replicate-to-runware` - port a [Replicate](https://runware.ai/replicate-alternative) call.
+- `wavespeed-to-runware` - port a [WaveSpeed](https://runware.ai/wavespeed-alternative) call.
 
-Installed separately from the main catalog, because the audiences don't overlap: the generation skills are for people already on Runware, and a migration skill is dead weight the day after you finish migrating.
+Installed separately from the main catalog, because the audiences don't overlap: the generation skills are for builders already on Runware, and a migration skill has served its purpose the day after you finish migrating.
 
 ## Authoring
 
