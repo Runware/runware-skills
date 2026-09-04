@@ -4,7 +4,7 @@ Three end-to-end recipes for the `llm-agent` skill. Each shows the scenario, the
 
 Field reminders:
 
-- `model` is the AIR. The recipes below use `google:gemini@3.1-pro`, `moonshotai:kimi@k2.6`, and `anthropic:claude@sonnet-4.6`. Confirm each is `live` against `runware-models` before calling.
+- `model` is the AIR. The recipes below use `google:gemini@3.1-pro`, `deepseek:v4@flash`, and `anthropic:claude@sonnet-4.6`. Confirm each is `live` against `runware-models` before calling.
 - A `tool_calls` finish means `message.content` is null and the calls live in `message.tool_calls`.
 - `function.arguments` is a JSON-encoded **string**, not an object. Parse it before use.
 - Every `tool` reply needs a `tool_call_id` equal to the call's `id`. That pairing is how the model matches your result to its request.
@@ -55,7 +55,7 @@ Notes:
 - Read the text from `choices[0].message.content`.
 - Swap `model` to `anthropic:claude@sonnet-4.6` for a cheaper, faster tier, or to `google:gemini@3.1-pro` for the strongest reasoning. The request shape does not change.
 
-## Recipe 2: Single tool-call loop (Kimi K2.6)
+## Recipe 2: Single tool-call loop (DeepSeek V4 Flash)
 
 Scenario: an on-call assistant answers a question about live service health. Define one function as a JSON schema, the model returns a `tool_calls` message, you run the function and return the result as a `tool` message, the model finalizes. This is the four-message round-trip.
 
@@ -63,7 +63,7 @@ Step 1, request with `tools`:
 
 ```json
 {
-  "model": "moonshotai:kimi@k2.6",
+  "model": "deepseek:v4@flash",
   "messages": [
     { "role": "system", "content": "You are an on-call site-reliability assistant. Use the provided tools to inspect live service health before answering. Be concise, cite the numbers you found, and recommend one concrete next action." },
     { "role": "user", "content": "What is the current error rate on the payments service?" }
@@ -96,7 +96,7 @@ Step 2, model returns a tool call (`finish_reason: "tool_calls"`, `content` is n
 {
   "id": "chatcmpl-1fb9303b72d3939c40a33ecd",
   "object": "chat.completion",
-  "model": "moonshotai:kimi@k2.6",
+  "model": "deepseek:v4@flash",
   "choices": [
     {
       "index": 0,
@@ -137,7 +137,7 @@ Step 4, send the full history back. The model finalizes (`finish_reason: "stop"`
 {
   "id": "chatcmpl-2ac8411e93f5040db511fd4e",
   "object": "chat.completion",
-  "model": "moonshotai:kimi@k2.6",
+  "model": "deepseek:v4@flash",
   "choices": [
     {
       "index": 0,

@@ -25,10 +25,10 @@ Build a conversational or agentic LLM over your own functions using Runware-host
 Address by **AIR**. Confirm each is `live` and inspect its schema via `runware-models` + `runware-run` before calling. Never hardcode a stale pick.
 
 - **Default flagship: Gemini 3.1 Pro** (`google:gemini@3.1-pro`). Strongest reasoning and instruction-following, ~1M-token context. Best general agent brain.
+- **GPT-5.5** (`openai:gpt@5.5`). Frontier reasoning for complex coding, long-context work, and tool-using professional tasks.
 - **Claude Opus 4.8** (`anthropic:claude@opus-4.8`). Premium reasoning and long-horizon tool use.
 - **Claude Sonnet 4.6** (`anthropic:claude@sonnet-4.6`). Fast, cheaper Claude tier for high-volume or latency-sensitive agents.
-- **Kimi K2.6** (slug `moonshotai-kimi-k2-6`, AIR `moonshotai:kimi@k2.6`). Open frontier model built for long-horizon, tool-rich agentic workflows. The tool-calling guide is grounded on it.
-- **DeepSeek V4 Flash** (`deepseek:v4@flash`). Fast, cost-efficient open reasoner with ~1M-token context, strong on coding and agent tasks.
+- **DeepSeek V4 Flash** (`deepseek:v4@flash`). Fast, cost-efficient open reasoner with ~1M-token context, dual thinking modes, strong on coding and agent tasks.
 
 Route by sub-task, not by brand: pick reasoning depth and context window for the job, then drop to a faster tier for cheap or high-volume calls. All five carry `io:text-to-text`.
 
