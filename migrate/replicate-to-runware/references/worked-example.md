@@ -52,7 +52,7 @@ List price: $0.04 per output image. Actual billed cost: $0.04 (this model bills 
 ]
 ```
 
-`deliveryMethod` is set explicitly rather than left to default — `sync` happens to be `bfl:2@1`'s own schema default, but that default varies per model (Example 2 below uses a Kling model that's `async`-only), so state the choice rather than relying on an implicit default that won't hold if the model changes. `async` is the generally recommended choice outside of a deliberately verified fast-model case like this one — see the general integration skill.
+`deliveryMethod` is set explicitly rather than left to default — `sync` happens to be `bfl:2@1`'s own schema default, but that default varies per model (Example 2 below uses a Kling model whose default is `async`), so state the choice rather than relying on an implicit default that won't hold if the model changes. `async` is the generally recommended choice outside of a deliberately verified fast-model case like this one — see the general integration skill.
 
 The request body is always a JSON array of task objects, even for a single task — Runware doesn't accept a bare object at the top level.
 
@@ -74,7 +74,7 @@ The request body is always a JSON array of task objects, even for a single task 
 
 **Needs adjustment**
 - Endpoint + envelope: per-model URL + `{"input": {...}}` wrapper → fixed endpoint + AIR in body + fields directly on the task object.
-- `Prefer: wait` isn't a guarantee: this call resolved without needing a manual poll, but the header is a best-effort hint, not a deterministic sync mode like Runware's `deliveryMethod: "sync"` (where the target model's schema even offers `sync` — not all do). Keep a poll fallback regardless, and default to `deliveryMethod: "async"` rather than `sync` unless you've specifically verified the model supports it and you've chosen `sync` deliberately.
+- `Prefer: wait` isn't a guarantee: this call resolved without needing a manual poll, but the header is a best-effort hint. Runware's `deliveryMethod: "sync"` is the same over HTTP past 120 seconds: the task comes back with `status: "processing"` and needs a `getResponse` poll. Keep a poll fallback regardless, and default to `deliveryMethod: "async"` rather than `sync` unless you've chosen `sync` deliberately for a model you know is fast.
 - Response shape: `output` is a bare URL string here. Other models return an array of URLs, or `{url: "..."}`, instead — the shape isn't consistent across Replicate's catalog. Runware is consistently `data[0].imageURL` regardless of model.
 
 **No equivalent**
