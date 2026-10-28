@@ -132,7 +132,7 @@ List price: $0.05 per second of output video. The requested clip was 5 seconds.
 ]
 ```
 
-(Runware's Kling lineup has been renumbered since this example was captured — `klingai:5@2`, the AIR originally used here, is deprecated. `klingai:kling-video@2.6-pro` is shown as an illustrative live replacement, but don't take it on faith: confirm the current AIR for the Kling image-to-video tier you actually need against `model-map.md` or the live catalog before shipping this call. Separately, this example still needs an input image field for image-to-video — the exact Runware field name for that isn't confirmed either. Don't guess a field name here; check the model's own schema at `https://runware.ai/docs/models/index.json` before shipping this call.)
+(Confirm the current AIR for the Kling image-to-video tier you need against `model-map.md` or the live catalog before shipping this call. This example still needs an input image field for image-to-video. Do not guess the field name. Check the model's schema at `https://runware.ai/docs/models/index.json`.)
 
 ```json
 {

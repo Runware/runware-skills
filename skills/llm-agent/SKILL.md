@@ -36,7 +36,7 @@ Route by sub-task, not by brand: pick reasoning depth and context window for the
 
 This is text, not media, so it runs over the OpenAI-compatible endpoint, **not** `imageInference`.
 
-1. **Point an OpenAI client at Runware.** Base URL `https://api.runware.ai/v1`, your Runware API key, and set `model` to the AIR (or slug). Existing OpenAI agent code and frameworks work unchanged. See the platform endpoint docs at `/docs/platform/openai`.
+1. **Point an OpenAI client at Runware.** Base URL `https://api.runware.ai/v1`, your Runware API key, and set `model` to the AIR (or slug). Existing OpenAI agent code and frameworks work unchanged. See the platform endpoint docs at `/docs/platform/compatible-apis`.
 2. **Describe each tool as a JSON schema** under `tools`: `{ "type": "function", "function": { name, description, parameters } }`. Constrain arguments tightly (`enum`, `required`).
 3. **Send the conversation** (`messages` with `system` + `user`) plus `tools`. Set `tool_choice` (default `auto`).
 4. **Run the loop.** Read `response.choices[0].message`. If `finish_reason` is `tool_calls`, the assistant `content` is null and calls live in `message.tool_calls`. For each call: parse `function.arguments` (a JSON **string**, not an object), run the function, and append one `tool` message whose `tool_call_id` matches the call's `id`. Append the assistant message too. Repeat until the model returns no tool calls (`finish_reason: "stop"`).
