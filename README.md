@@ -97,8 +97,20 @@ A separate plugin under `migrate/`, for developers arriving at Runware rather th
 
 Installed separately from the main catalog, because the audiences don't overlap: the generation skills are for builders already on Runware, and a migration skill has served its purpose the day after you finish migrating.
 
+## Network and credentials
+
+- `https://mcp.runware.ai` - the Runware MCP server that the plugin connects to in Grok and Cursor. On first use it asks for your Runware API key on a Runware sign-in page.
+- `https://api.runware.ai` - the Runware API, for agents that call it through the SDK, the CLI or plain HTTP.
+- `im.runware.ai`, `vm.runware.ai` and `am.runware.ai` serve the generated media.
+
+You need a Runware API key, created at [runware.ai](https://runware.ai). The plugin adds no hooks or local scripts.
+
 ## Authoring
 
 Every skill is a folder - `skills/<kebab-name>/SKILL.md` for the generation catalog, `migrate/<kebab-name>/SKILL.md` for the migration plugin - and each `SKILL.md` follows the same skeleton. Depth that only matters some of the time goes in an optional `references/` folder next to it, so it loads on demand rather than every time the skill triggers.
 
 Skills route to models by AIR and defer to the live schema rather than restating it, which is what keeps them from going stale as the catalog changes.
+
+## License
+
+MIT, see [LICENSE](LICENSE).
