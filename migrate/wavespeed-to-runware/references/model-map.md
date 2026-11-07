@@ -1,6 +1,6 @@
 # Verified WaveSpeed ↔ Runware model pairs
 
-These pairs come from Runware's own WaveSpeed↔AIR model mapping data, synced as of 2026-08-24 and re-checked against live catalog status on 2026-08-27. Most of these are catalog-matched by ID, not individually confirmed by an executed generation call — treat them as "the ID pairing is real and comes from a matched catalog entry," not "the request/response behavior has been confirmed end to end" for that specific model. One pairing, `runware:101@1` ↔ `wavespeed-ai/flux-dev`, has been confirmed with a real, fully executed generation call (see `worked-example.md`) — it's a reliable template for what the general request/response pattern looks like, even for models that haven't been individually tested. Every AIR listed here was confirmed `"status": "live"` in https://runware.ai/docs/models/index.json as of the re-check date; rows whose AIR had gone `deprecated`, `coming-soon`, or disappeared from the catalog entirely were removed.
+These pairs come from Runware's own WaveSpeed↔AIR model mapping data, synced as of 2026-08-24 and re-checked against live catalog status on 2026-11-07. Most of these are catalog-matched by ID, not individually confirmed by an executed generation call — treat them as "the ID pairing is real and comes from a matched catalog entry," not "the request/response behavior has been confirmed end to end" for that specific model. One pairing, `runware:101@1` ↔ `wavespeed-ai/flux-dev`, has been confirmed with a real, fully executed generation call (see `worked-example.md`) — it's a reliable template for what the general request/response pattern looks like, even for models that haven't been individually tested. Every AIR listed here was confirmed `"status": "live"` in https://runware.ai/docs/models/index.json as of the re-check date; rows whose AIR had gone `deprecated`, `coming-soon`, or disappeared from the catalog entirely were removed.
 
 This is a point-in-time sync, not a live link — it will drift out of date as both catalogs change. A pairing missing here doesn't mean no equivalent exists, only that it hasn't been synced into this file yet.
 
@@ -41,11 +41,9 @@ Where a single Runware AIR maps to different WaveSpeed model IDs depending on op
 | `runware:z-image@0` | `wavespeed-ai/z-image/base` |
 | `openai:gpt-image@2` | `openai/gpt-image-2/text-to-image` |
 | `xai:grok-imagine@image` | `x-ai/grok-imagine-image/text-to-image` |
-| `xai:grok-imagine@image-quality` | `x-ai/grok-imagine-image-quality/text-to-image` |
 | `bytedance:5@0` | `bytedance/seedream-v4` |
 | `bytedance:seedream@4.5` | `bytedance/seedream-v4.5` |
 | `bytedance:seedream@5.0-lite` | `bytedance/seedream-v5.0-lite` |
-| `google:4@1` | `google/nano-banana/text-to-image` |
 | `google:4@2` | `google/nano-banana-pro/text-to-image` |
 | `google:4@3` | `google/nano-banana-2/text-to-image` |
 | `alibaba:wan@2.6-image` | `alibaba/wan-2.6/text-to-image` |
@@ -88,7 +86,6 @@ Where a single Runware AIR maps to different WaveSpeed model IDs depending on op
 | `bytedance:5@0` | `bytedance/seedream-v4/edit` | edit |
 | `bytedance:seedream@4.5` | `bytedance/seedream-v4.5/edit` | edit |
 | `bytedance:seedream@5.0-lite` | `bytedance/seedream-v5.0-lite/edit` | edit |
-| `google:4@1` | `google/nano-banana/edit` | edit |
 | `google:4@2` | `google/nano-banana-pro/edit` | edit |
 | `google:4@3` | `google/nano-banana-2/edit` | edit |
 | `alibaba:wan@2.6-image` | `alibaba/wan-2.6/image-edit` | edit |
@@ -133,8 +130,6 @@ Where a single Runware AIR maps to different WaveSpeed model IDs depending on op
 | `bytedance:2@1` | image-to-video | `bytedance/seedance-v1-pro-i2v-1080p` |
 | `bytedance:2@2` | text-to-video | `bytedance/seedance-v1-pro-fast/text-to-video` |
 | `bytedance:2@2` | image-to-video | `bytedance/seedance-v1-pro-fast/image-to-video` |
-| `bytedance:seedance@1.5-pro` | text-to-video | `bytedance/seedance-v1.5-pro/text-to-video` |
-| `bytedance:seedance@1.5-pro` | image-to-video | `bytedance/seedance-v1.5-pro/image-to-video` |
 | `bytedance:seedance@2.0` | text-to-video | `bytedance/seedance-2.0/text-to-video` |
 | `bytedance:seedance@2.0` | image-to-video | `bytedance/seedance-2.0/image-to-video` |
 | `bytedance:seedance@2.0-fast` | text-to-video | `bytedance/seedance-2.0-fast/text-to-video` |

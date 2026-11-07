@@ -1,6 +1,6 @@
 # Verified Replicate ↔ Runware model pairs
 
-These pairs come from Runware's own Replicate↔AIR model mapping data, synced as of 2026-08-24 and re-checked against live catalog status on 2026-08-27 (51 mapped slugs remain after that re-check — some of the originally-probed rows were among those removed for being deprecated). Many of these were also spot-checked with a real, paid Replicate API call, not just a name-based pairing — but after the 2026-08-27 removals, don't assume a specific row was one of the probed ones without checking `worked-example.md`; treat every remaining row as a verified *pairing*, not necessarily a verified *end-to-end call*. Every AIR listed here was confirmed `"status": "live"` in https://runware.ai/docs/models/index.json as of the re-check date; rows whose AIR had gone `deprecated`, `coming-soon`, or disappeared from the catalog entirely were removed.
+These pairs come from Runware's own Replicate↔AIR model mapping data, synced as of 2026-08-24 and re-checked against live catalog status on 2026-11-07 (50 mapped slugs remain after that re-check — some of the originally-probed rows were among those removed for being deprecated). Many of these were also spot-checked with a real, paid Replicate API call, not just a name-based pairing — but after those removals, don't assume a specific row was one of the probed ones without checking `worked-example.md`; treat every remaining row as a verified *pairing*, not necessarily a verified *end-to-end call*. Every AIR listed here was confirmed `"status": "live"` in https://runware.ai/docs/models/index.json as of the re-check date; rows whose AIR had gone `deprecated`, `coming-soon`, or disappeared from the catalog entirely were removed.
 
 This is a point-in-time sync, not a live link — it will drift out of date as both catalogs add/remove models. A pairing being missing here doesn't mean no equivalent exists, only that it hasn't been synced into this file yet.
 
@@ -29,11 +29,10 @@ Where a single Runware AIR maps to different Replicate slugs depending on operat
 | `recraft:v4.1-pro@0` | `recraft-ai/recraft-v4.1-pro` |
 | `runware:5@1` | `stability-ai/stable-diffusion-3` |
 | `civitai:101055@128078` | `stability-ai/sdxl` |
-| `openai:1@1` | `openai/gpt-image-1` |
 | `openai:gpt-image@2` | `openai/gpt-image-2` |
 | `alibaba:wan@2.7-image` | `wan-video/wan-2.7-image` |
 
-Note: `openai/gpt-image-1` is a BYOK model (you supply your own OpenAI billing) and had no scrapable Replicate-side pricing as of the last sync — worth confirming current billing behavior directly if cost matters for the migration. `stability-ai/sdxl` also had no scrapable price at last check.
+Note: `stability-ai/sdxl` had no scrapable Replicate-side pricing at last check.
 
 ## Image editing / upscaling / utility
 
@@ -60,7 +59,6 @@ Note: `philz1337x/clarity-upscaler` had no scrapable Replicate-side price at las
 | `klingai:6@1` | text-to-video | `kwaivgi/kling-v2.5-turbo-pro` |
 | `bytedance:2@1` | text-to-video | `bytedance/seedance-1-pro` |
 | `bytedance:2@2` | text-to-video | `bytedance/seedance-1-pro-fast` |
-| `bytedance:seedance@1.5-pro` | text-to-video | `bytedance/seedance-1.5-pro` |
 | `bytedance:seedance@2.0` | text-to-video | `bytedance/seedance-2.0` |
 | `bytedance:seedance@2.0-fast` | text-to-video | `bytedance/seedance-2.0-fast` |
 | `bytedance:5@1` | image-to-video | `bytedance/omni-human` |

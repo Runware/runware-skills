@@ -1,6 +1,6 @@
 # Verified Fal ↔ Runware model pairs
 
-These pairs come from Runware's own Fal↔AIR model mapping data, synced as of 2026-08-24 and re-checked against live catalog status on 2026-08-27 — not inferred from model names. Every AIR listed here was confirmed `"status": "live"` in https://runware.ai/docs/models/index.json as of the re-check date; rows whose AIR had gone `deprecated`, `coming-soon`, or disappeared from the catalog entirely were removed. Treat every remaining row here as a verified, currently-live pairing. If a model isn't listed, don't guess a pairing — search https://runware.ai/docs/models/index.json for the same creator/family and say explicitly that the pairing is inferred, not verified.
+These pairs come from Runware's own Fal↔AIR model mapping data, synced as of 2026-08-24 and re-checked against live catalog status on 2026-11-07 — not inferred from model names. Every AIR listed here was confirmed `"status": "live"` in https://runware.ai/docs/models/index.json as of the re-check date; rows whose AIR had gone `deprecated`, `coming-soon`, or disappeared from the catalog entirely were removed. Treat every remaining row here as a verified, currently-live pairing. If a model isn't listed, don't guess a pairing — search https://runware.ai/docs/models/index.json for the same creator/family and say explicitly that the pairing is inferred, not verified.
 
 This is a point-in-time sync, not a live link — it will drift out of date as both catalogs add/remove models. A pairing being missing here doesn't mean no equivalent exists, only that it hasn't been synced into this file yet.
 
@@ -33,15 +33,12 @@ Where a single Runware AIR maps to different Fal endpoints depending on operatio
 | `ideogram:3@1` | `fal-ai/ideogram/v2` |
 | `ideogram:4@1` | `fal-ai/ideogram/v3` |
 | `ideogram:4@0` | `ideogram/v4` |
-| `google:4@1` | `fal-ai/nano-banana` |
 | `google:4@2` | `fal-ai/nano-banana-pro` |
 | `google:4@3` | `fal-ai/nano-banana-2` |
 | `bytedance:5@0` | `fal-ai/bytedance/seedream/v4/text-to-image` |
 | `bytedance:seedream@4.5` | `fal-ai/bytedance/seedream/v4.5/text-to-image` |
 | `bytedance:seedream@5.0-lite` | `fal-ai/bytedance/seedream/v5/lite/text-to-image` |
 | `xai:grok-imagine@image` | `xai/grok-imagine-image` |
-| `xai:grok-imagine@image-quality` | `xai/grok-imagine-image/quality/text-to-image` |
-| `openai:1@1` | `fal-ai/gpt-image-1/text-to-image` |
 | `openai:gpt-image@2` | `openai/gpt-image-2` |
 | `recraft:v4@0` | `fal-ai/recraft/v4/text-to-image` |
 | `recraft:v4-pro@0` | `fal-ai/recraft/v4/pro/text-to-image` |
@@ -134,7 +131,6 @@ Note: `runware:108@1` and `alibaba:qwen-image@2512` both point at the same Fal e
 | `lightricks:ltx@2.3-fast` | text-to-video | `fal-ai/ltx-2.3/text-to-video/fast` |
 | `bytedance:2@1` | text-to-video | `fal-ai/bytedance/seedance/v1/pro/text-to-video` |
 | `bytedance:2@2` | text-to-video | `fal-ai/bytedance/seedance/v1/pro/fast/text-to-video` |
-| `bytedance:seedance@1.5-pro` | text-to-video | `fal-ai/bytedance/seedance/v1.5/pro/text-to-video` |
 | `bytedance:seedance@2.0` | text-to-video | `bytedance/seedance-2.0/text-to-video` |
 | `bytedance:seedance@2.0-fast` | text-to-video | `bytedance/seedance-2.0/fast/text-to-video` |
 | `pixverse:1@2` | text-to-video | `fal-ai/pixverse/v4/text-to-video` |
