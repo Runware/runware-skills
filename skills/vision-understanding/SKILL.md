@@ -26,7 +26,7 @@ Route by input modality. Confirm the live model + its schema via the `runware-mo
 - **Image → text (default): Qwen2.5-VL-7B-Instruct** (`runware:152@2`) - hosted, instruction-tuned for captioning, visual Q&A, and structured extraction. Good price/quality default.
 - **Image → text (premium / reasoning): Gemini 3.1 Pro** (`google:gemini@3.1-pro`) - flagship multimodal, strong on documents, charts, dense OCR, and multi-step reasoning over an image.
 - **Image → text (cheap / fast alts):** Qwen2.5-VL-3B-Instruct (`runware:152@1`), LLaVA-1.6-Mistral-7B (`runware:150@2`), or Gemini 3.1 Flash Lite (`google:gemini@3.1-flash-lite`) for high-volume tagging.
-- **Video → text: Gemini 3.1 Pro** (`google:gemini@3.1-pro`) for summarization and Q&A over a clip; **Memories Video Captioning** (`memories:1@1`) for structured captions with speaker labels and optional chapter summaries.
+- **Video → text: Gemini 3.1 Pro** (`google:gemini@3.1-pro`) for summarization and Q&A over a clip. No `op:caption` model takes video today.
 - **Audio → text: Gemini 3.1 Pro** (`google:gemini@3.1-pro`). Audio-to-text is single-vendor today - only the Gemini family carries `io:audio-to-text`, so there is no non-Google fallback for pure audio.
 - **Documents:** render to image or PDF and route as image → text. Gemini 3.1 Pro handles multi-page and dense layouts best.
 
@@ -43,16 +43,15 @@ Route by input modality. Confirm the live model + its schema via the `runware-mo
 
 - **Pick by what goes in, not by brand.** The whole decision is the input modality. Image and document → a vision-language model. Video → a video-capable model. Audio → Gemini. Sending a video to an image-only model fails the schema gate.
 - **Ask for the output shape explicitly.** "Describe this" yields prose. For tags, say "list 10 keywords". For extraction, say "return JSON with fields date, total, vendor" and the chat models comply. Underspecifying the shape is the main cause of unusable output.
-- **Two surfaces, two contracts.** Chat-style VLMs (Gemini, Qwen-VL, LLaVA) take an image alongside a text instruction in a chat message and answer conversationally - use the OpenAI-compatible endpoint. `op:caption` models (Qwen-VL and Memories also expose this) are a single-shot generation task driven by caption options, not by a free instruction.
+- **Two surfaces, two contracts.** Chat-style VLMs (Gemini, Qwen-VL, LLaVA) take an image alongside a text instruction in a chat message and answer conversationally - use the OpenAI-compatible endpoint. `op:caption` models (Qwen-VL also exposes this) are a single-shot generation task driven by caption options, not by a free instruction.
 - **For documents and dense OCR, prefer the reasoning tier.** Gemini 3.1 Pro reads small text, tables, and multi-column layouts more reliably than the small hosted VLMs. Render each page to an image or pass the PDF.
-- **For video, separate "summarize" from "caption".** Gemini answers open questions and summarizes a clip. Memories produces structured captions with speaker labels and chapter-style markers - use it when you need navigable, labeled output rather than a free answer.
 - **Stay grounded.** Ask the model to report only what is visible or audible and to say so when something is not present. Do not let it invent text it cannot read or details off-frame.
 
 ## Parameters that matter
 
 - **Input field** - the media goes under the model's documented input field (an image/video/audio reference in the chat message content, or the caption task's input field). Confirm the exact name against the live schema; never guess.
 - **Instruction / question** - the text prompt that sets the task (caption vs Q&A vs extraction). For `op:caption` models, use the schema's caption options instead.
-- **`op:caption` is text-output only.** Media output params (output type/format/quality, upload endpoint) do not apply and are removed from caption base types. Only `memories:1@1` enforces this gate; other caption models accept-and-ignore them, but do not rely on that.
+- **`op:caption` is text-output only.** Media output params (output type/format/quality, upload endpoint) do not apply and are removed from caption base types. Do not send them.
 - **Delivery mode** - sync for images and short clips, async + poll for long video/audio.
 - For chat-style calls, the OpenAI-compatible endpoint takes the usual completion controls (e.g. token limit, temperature); keep temperature low for factual extraction.
 

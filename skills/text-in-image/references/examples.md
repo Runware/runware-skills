@@ -66,18 +66,18 @@ To iterate one line without rewriting the whole poster, send a natural-language 
 
 ## Recipe 2: packaging with exact copy (Grok Imagine, prompt-only)
 
-Grok renders short quoted strings on product mockups fast and has no structured-prompt layer. Drive everything through `positivePrompt`: product description, then the brand and product copy as quoted strings, then the photography context. Request a batch and pick the cleanest text.
+Grok renders short quoted strings on product mockups and has no structured-prompt layer. Drive everything through `positivePrompt`: product description, then the brand and product copy as quoted strings, then the photography context. Request a batch and pick the cleanest text.
 
 **Scenario.** A kraft coffee bag mockup. Brand `"NORDIC ROAST"` as the primary line, `"Single Origin · Ethiopia"` as the subtitle, and a small roast tag `"MEDIUM ROAST · 250g"`.
 
-**Request.** Grok takes either a `resolution` preset or a `width`/`height` preset pair, never both. A square 1:1 packshot uses `1024 × 1024`. `resolution: "2K"` is the larger alternative when you do not pass explicit dimensions.
+**Request.** Grok takes either a `resolution` preset or a `width`/`height` preset pair, never both, and `resolution` only applies when you pass reference images. A square 1:1 packshot uses `1024 × 1024`. `2048 × 2048` is the larger alternative.
 
 ```json
 [
   {
     "taskType": "imageInference",
     "taskUUID": "22222222-2222-2222-2222-222222222222",
-    "model": "xai:grok-imagine@image-quality",
+    "model": "xai:grok-imagine@image-2.0",
     "positivePrompt": "A premium kraft-paper coffee bag standing on a rustic wooden surface with a few scattered roasted beans, soft natural window light, shallow depth of field, product photography. The brand name \"NORDIC ROAST\" is printed in matte-black bold serif across the upper third, with \"Single Origin · Ethiopia\" as a smaller centred subtitle directly below, and a small \"MEDIUM ROAST · 250g\" tag in the lower-left corner.",
     "width": 1024,
     "height": 1024,

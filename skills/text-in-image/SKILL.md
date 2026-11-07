@@ -26,7 +26,7 @@ Produce an image where specific words must render correctly, in the right place,
 - **Default for typography-heavy design: Ideogram 4.0** (`ideogram:4@0`). Treats text as a first-class element on a structured JSON prompt, so each line of copy is rendered byte-for-byte. Best for posters, packaging, dense multilingual labels, and anything with a real type hierarchy.
 - **Best for natural-language briefs + world knowledge: GPT Image 2** (`openai:gpt-image@2`). LLM-based, parses a full design brief, strong on infographics and ad creatives where the model also generates plausible data/content. Renders quoted text reliably.
 - **Strong general pick with legible text: Nano Banana 2** (`google:4@3`). Names objects and positions accurately, renders short quoted strings well, has a `thinking` level for dense layouts.
-- **Fast text-on-image for marketing/signage: Grok Imagine** (`xai:grok-imagine@image-quality`, or the lighter `xai:grok-imagine@image`). Prompt-only text rendering, good for headlines, pricing callouts, packaging mockups, A/B variants.
+- **Text-on-image for marketing/signage: Grok Imagine** (`xai:grok-imagine@image-2.0`, or the lighter `xai:grok-imagine@image`). Prompt-only text rendering, good for headlines, pricing callouts, packaging mockups, A/B variants.
 - Confirm the model is `live` and inspect its schema via `runware-models` + `runware-run` before calling. Never hardcode a stale choice.
 
 ## Workflow

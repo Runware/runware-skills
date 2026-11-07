@@ -24,7 +24,7 @@ Produce speech in a *custom* voice, one you either clone from a real recording o
 ## Models
 
 - **Clone from a sample (single speaker): Qwen3-TTS Base** (`alibaba:qwen@3-tts-1.7b-base`). Takes the reference recording in `inputs.audio` with `speech.voice: "clone"`. Highest-similarity mode (ICL) needs a `transcript` of the sample; embedding-only mode (`settings.xVectorOnly: true`) skips the transcript at lower similarity. 10+ languages.
-- **Clone for dialogue / multi-speaker: Dia 1.6B** (`runware:dia@1.6b`) or **Dia2 2B** (`runware:dia2@2b`). Reference voices go in `inputs.audios` (first = `[S1]`, second = `[S2]`), supports non-verbal cues. English only. Dia2 streams and is the newer pick.
+- **Clone for dialogue / multi-speaker: Dia2 2B** (`runware:dia2@2b`). Reference voices go in `inputs.audios` (first = `[S1]`, second = `[S2]`), supports non-verbal cues. English only.
 - **Design from a description: Qwen3-TTS VoiceDesign** (`alibaba:qwen@3-tts-1.7b-voicedesign`). The voice is created from a natural-language description in `positivePrompt`, with `speech.voice: "design"`. No recording needed.
 - **Premium preset timbres (not cloning): Qwen3-TTS CustomVoice** (`alibaba:qwen@3-tts-1.7b-customvoice`). Nine curated timbres (`aiden`, `serena`, `vivian`, …) plus a style hint. Use it when a polished stock voice with style control beats a clone.
 
